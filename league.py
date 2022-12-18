@@ -47,3 +47,19 @@ class League(SleeperBase):
   def matchups(self, week):
     matchup_path = self.update_path(f"{self.league_id}/matchups/{week}")
     return (self.send_request(matchup_path, None))
+
+  def winners_bracket(self):
+    bracket_path = self.update_path(f"{self.league_id}/winners_bracket")
+    return (self.send_request(bracket_path, None))
+
+  def losers_bracket(self):
+    bracket_path = self.update_path(f"{self.league_id}/losers_bracket")
+    return (self.send_request(bracket_path, None))
+
+  def transactions(self, week):
+    transaction_path = self.update_path(f"{self.league_id}/transactions/{week}")
+    return (self.send_request(transaction_path, None))
+
+  def traded_picks(self):
+    picks_path = self.update_path(f"{self.league_id}/traded_picks")
+    return (self.send_request(picks_path, None))
