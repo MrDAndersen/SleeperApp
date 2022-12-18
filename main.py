@@ -1,7 +1,7 @@
-from endpoints import SleeperUser
+from functions import get_players
+import pandas as pd
+import json
 
-from league import League
-
-u = SleeperUser("scottfish")
-l = League("861078285298311168")
-print(l.state)
+p = get_players("NFL")
+l = [pd.DataFrame.from_dict(x, orient="index").transpose() for x in p.values()]
+print(pd.concat(l))

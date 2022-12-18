@@ -1,4 +1,4 @@
-from endpoints import SleeperBase
+from sleeper import SleeperBase
 
 
 class League(SleeperBase):
@@ -44,6 +44,10 @@ class League(SleeperBase):
     user_path = self.update_path(f"{self.league_id}/users")
     return (self.send_request(user_path, None))
 
+  def drafts(self):
+    draft_path = self.update_path(f"{self.league_id}/drafts")
+    return (self.send_request(draft_path, None))
+
   def matchups(self, week):
     matchup_path = self.update_path(f"{self.league_id}/matchups/{week}")
     return (self.send_request(matchup_path, None))
@@ -57,7 +61,8 @@ class League(SleeperBase):
     return (self.send_request(bracket_path, None))
 
   def transactions(self, week):
-    transaction_path = self.update_path(f"{self.league_id}/transactions/{week}")
+    transaction_path = self.update_path(
+      f"{self.league_id}/transactions/{week}")
     return (self.send_request(transaction_path, None))
 
   def traded_picks(self):
