@@ -3,5 +3,8 @@ import pandas as pd
 import json
 
 p = get_players("NFL")
-l = [pd.DataFrame.from_dict(x, orient="index").transpose() for x in p.values()]
-print(pd.concat(l))
+
+plist = list(p.values())
+player_df = [pd.DataFrame.from_dict(x) for x in plist]
+
+print(player_df[1])
