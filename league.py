@@ -2,18 +2,6 @@ from sleeper import SleeperBase
 
 
 class League(SleeperBase):
-  total_rosters = None
-  status = None
-  sport = None
-  settings = {}
-  season_type = None
-  scoring_settings = {}
-  roster_positions = {}
-  previous_league_id = None
-  name = None
-  league_id = None
-  draft_id = None
-  avatar = None
 
   def __init__(self, league_id):
     super().__init__("NFL")

@@ -2,23 +2,6 @@ from sleeper import SleeperBase
 
 
 class Draft(SleeperBase):
-  type = None
-  status = None
-  start_time = None
-  sport = None
-  settings = {}
-  season_type = None
-  season = None
-  metadata = {}
-  league_id = None
-  last_picked = None
-  last_message_time = None
-  last_message_id = None
-  draft_order = {}
-  slot_to_roster_id = {}
-  draft_id = None
-  creators = None
-  created = None
 
   def __init__(self, draft_id):
     super().__init__("NFL")

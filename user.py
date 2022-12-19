@@ -1,12 +1,7 @@
 from sleeper import SleeperBase
 
+
 class SleeperUser(SleeperBase):
-  current_season = None
-  base_url = None
-  username = None
-  user_id = None
-  display_name = None
-  avatar = None
 
   def __init__(self, username=None, user_id=None, sport="NFL"):
 
@@ -41,4 +36,3 @@ class SleeperUser(SleeperBase):
       season = self.current_season
     u = self.update_path(f"{self.user_id}/drafts/{self.sport}/{season}")
     return (self.send_request(u, None))
-

@@ -3,9 +3,6 @@ import requests
 
 
 class SleeperBase:
-  base_url = None
-  sport = None
-  state = {}
 
   def __init__(self, sport):
     self.base_url = urlparse("https://api.sleeper.app/v1/")
@@ -22,9 +19,9 @@ class SleeperBase:
 
   def players(self):
     player_path = self.update_path(f"players/{self.sport}")
-    return(self.send_request(player_path, None))
+    return (self.send_request(player_path, None))
 
-  def trending(self, type, lookback_hours = 24, limit=25):
+  def trending(self, type, lookback_hours=24, limit=25):
     player_path = self.update_path(f"players/{self.sport}/trending/{type}")
-    trending_params = {"lookback_hours": lookback_hours, "limit" : limit}
-    return(self.send_request(player_path, trending_params))
+    trending_params = {"lookback_hours": lookback_hours, "limit": limit}
+    return (self.send_request(player_path, trending_params))
