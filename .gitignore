@@ -1,0 +1,58 @@
+# 🐍 Python Artifacts
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.log
+
+# 🧪 Virtual Environments
+.venv/
+env/
+venv/
+ENV/
+pip-wheel-metadata/
+
+# 📦 Package & Dependency Artifacts
+poetry.lock
+*.nix
+*.toml
+
+# 🧹 IDE & Editor Artifacts
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# 🧙 Replit Artifacts
+.replit
+replit.nix
+.breakpoints
+
+# 🔐 Secrets & Environment
+.env
+.env.local
+.env.dev
+.env.production
+# Allow onboarding scroll
+!.env.example
+
+# 📜 Symbolic Scrolls & Rituals
+cleanup_scroll.sh
+setup_scroll.sh
+README_scroll.md
+
+# 🧪 Test Artifacts
+htmlcov/
+coverage.xml
+*.cover
+*.py,cover
+.cache/
+.mypy_cache/
+pytest_cache/
+
+# 🧭 OS & Misc
+.DS_Store
+Thumbs.db

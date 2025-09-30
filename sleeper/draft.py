@@ -1,9 +1,11 @@
+# TODO: update to take into account that requests via SleeperBase returns both headers and data.
+# TODO: make sure endpoint is correct for draft info
+
 from sleeper import SleeperBase
 
+class SleeperDraft(SleeperBase):
 
-class Draft(SleeperBase):
-
-  def __init__(self, draft_id):
+  def __init__(self, draft_id: str):
     super().__init__("NFL")
     self.base_url = super().update_path("draft/")
 
@@ -26,10 +28,10 @@ class Draft(SleeperBase):
     self.creators = draft_info["creators"]
     self.created = draft_info["created"]
 
-  def picks(self):
+  def picks(self) -> dict:
     picks_url = self.update_path(f"{self.draft_id}/picks")
     return (self.send_request(picks_url, None))
 
-  def traded_picks(self):
+  def traded_picks(self) -> dict:
     traded_picks_url = self.update_path(f"{self.draft_id}/traded_picks")
     return (self.send_request(traded_picks_url, None))

@@ -1,10 +1,7 @@
-from functions import get_players
-import pandas as pd
-import json
+# main.py — Summon a user scroll
+from sleeper import SleeperUser
+from sleeper import SleeperBase
 
-p = get_players("NFL")
-
-plist = list(p.values())
-player_df = [pd.DataFrame.from_dict(x) for x in plist]
-
-print(player_df[1])
+if __name__ == "__main__":
+    user = SleeperUser(username="mrdandersen")
+    print(user.get_user_leagues())
