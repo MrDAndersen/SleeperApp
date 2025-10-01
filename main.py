@@ -4,4 +4,5 @@ from sleeper import SleeperBase
 
 if __name__ == "__main__":
     user = SleeperUser(username="mrdandersen")
+    print(user.BASE_URL)
     print(user.get_user_leagues())
